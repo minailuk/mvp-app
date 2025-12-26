@@ -1,0 +1,11 @@
+services:
+  mvp-app:
+    build: .
+    ports:
+      - "5173:5173"                  # теперь именно 5173 → 5173
+    volumes:
+      - .:/app
+      - /app/node_modules
+    container_name: mvp-app
+    environment:
+      - CHOKIDAR_USEPOLLING=true
